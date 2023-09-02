@@ -23,13 +23,12 @@ const componentsMap: Record<string, React.FC<any>> = {
 // JSON data structure
 interface ComponentData {
   type: string;
-  props: Record<string, unknown>;
+  props?: Record<string, unknown>;
 }
 
 export interface JsonData {
   Content: ComponentData;
-  Children?: JsonData;
-  Triggers?: JsonData;
+  Children?: Record<string, JsonData>;
 }
 
 export const renderComponents = (

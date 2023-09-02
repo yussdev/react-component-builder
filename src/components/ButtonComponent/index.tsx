@@ -1,14 +1,19 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 import { useModal } from "@/context/modalContext";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
-  triggerModal: boolean;
+  triggerModal?: boolean;
 }
 export const ButtonComponent: React.FC<ButtonProps> = ({
   text,
   triggerModal,
+  ...props
 }) => {
   const { openModal } = useModal();
-  return <button onClick={() => triggerModal && openModal()}>{text}</button>;
+  return (
+    <button {...props} onClick={triggerModal ? openModal : props.onClick}>
+      {text}
+    </button>
+  );
 };

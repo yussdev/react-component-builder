@@ -3,6 +3,8 @@ import { ModalProvider } from "@/context/modalContext";
 import { JsonData, renderComponents } from "@/utils/componentBuilder";
 
 import "./App.css";
+import { SAMPLE_JSONS } from "./utils/constant";
+import { ButtonComponent } from "./components/ButtonComponent";
 
 function App() {
   const [fileData, setFileData] = useState<JsonData | null>(null);
@@ -35,6 +37,16 @@ function App() {
     <ModalProvider>
       <div>
         <h1>React Component Builder - Simple version</h1>
+        <div className="sample-files">
+          {SAMPLE_JSONS.map((file) => (
+            <ButtonComponent
+              key={file.name}
+              onClick={() => setFileData(file.data)}
+              text={file.name}
+              triggerModal={false}
+            />
+          ))}
+        </div>
 
         <div className="file-input-container">
           <label className="custom-file-input">
@@ -42,7 +54,6 @@ function App() {
             <span>Select Config File</span>
           </label>
         </div>
-
         <div className="components-canvas">
           {error && <p className="error-box">{error}</p>}
           {fileData && renderComponents(fileData)}

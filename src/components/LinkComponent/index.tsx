@@ -4,7 +4,7 @@ import { useModal } from "@/context/modalContext";
 interface LinkProps {
   text: string;
   url: string;
-  triggerModal: boolean;
+  triggerModal?: boolean;
 }
 
 export const LinkComponent: React.FC<LinkProps> = ({
