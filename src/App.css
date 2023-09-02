@@ -1,0 +1,78 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.file-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.custom-file-input {
+  display: inline-block;
+  background-color: #007bff;
+  /* Change the background color to your desired color */
+  color: #fff;
+  /* Text color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-input:hover {
+  background-color: #0056b3;
+  /* Change the background color on hover */
+}
+
+/* Hide the input element */
+.custom-file-input input[type="file"] {
+  display: none;
+}
+
+.box-component {
+  border: 1px solid #eee;
+  padding: 10px;
+}
+
+.components-canvas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-box {
+  color: red;
+}
+
+.modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+}
+.modal__header{
+  display: flex;
+  justify-content: space-between;
+}
+.modal__overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(10Px);
+  border: 1px solid #c2c2c208;
+}
+.modal__content{
+  position: relative;
+  background: white;
+  border: 1px solid #000;
+  padding: 20px;
+  border-radius: 10px;
+}
